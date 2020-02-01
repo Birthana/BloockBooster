@@ -13,11 +13,10 @@ public class ObjectPool : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Bmove = GetComponent<BulletMovement>();
         objects = new List<GameObject>();
         for (int i = 0; i < poolMax; i++)
         {
-            GameObject g = Instantiate(objectToPool);
+            GameObject g = Instantiate(objectToPool, this.transform);
             g.SetActive(false);
             objects.Add(g);
         }
@@ -28,12 +27,13 @@ public class ObjectPool : MonoBehaviour
     {
         foreach (GameObject g in objects)
         {
-            if (!gameObject.activeInHierarchy)
+            if (!g.activeInHierarchy)
             {
                 g.transform.SetParent(this.transform);
                 return g;
             }
         }
-        return null;
+        GameObject obj = Instantiate(objectToPool, this.transform);
+        return obj;
     }
 }
