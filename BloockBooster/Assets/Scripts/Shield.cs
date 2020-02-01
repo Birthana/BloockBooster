@@ -25,4 +25,12 @@ public class Shield : MonoBehaviour
             position.RotateAround(player, zAxis, -speed * Time.deltaTime);
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.GetComponent<Stage2Bullet>())
+        {
+            Destroy(collision.gameObject);
+        }
+    }
 }
