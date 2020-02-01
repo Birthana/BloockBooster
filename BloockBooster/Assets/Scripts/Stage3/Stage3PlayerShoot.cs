@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class Stage3PlayerShoot : MonoBehaviour
 {
-    bool isShooting;
-
+    bool isShooting = false;
     BulletMovement Bmove;
-    List<ObjectPool> objects;
+    [SerializeField]List<ObjectPool> objects;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +16,10 @@ public class Stage3PlayerShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if( Input.GetMouseButtonDown(0) )
+        {
+            Shoot();
+        }
     }
 
     void Shoot()
@@ -30,12 +32,15 @@ public class Stage3PlayerShoot : MonoBehaviour
 
     IEnumerator ShootBullets()
     {
-        isShooting = true;
         //Spawn Bullets form player
+        isShooting = true;
         foreach (ObjectPool p in objects)
         {
             GameObject b = p.FindUnusedObject();
             b.SetActive(true);
+            b.transform.localPosition = p.gameObject.transform.localPosition + (p.gameObject.transform.up * 0.01f);
+            
+            b.GetComponent<BulletMovement>().Fire(p.transform.localPosition);
         }
         yield return new WaitForSeconds(0.05f);
         isShooting = false;
