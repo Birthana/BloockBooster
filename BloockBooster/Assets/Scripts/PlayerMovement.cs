@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Rigidbody2D rb;
-    public float speed;
+    private Rigidbody2D rb;
+    [SerializeField] float speed;
+    [SerializeField] float jumpHeight;
     public Animator animator;
+
+
+    private int StageNum;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +21,22 @@ public class PlayerMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+        if (StageNum == 1)
+            Stage1Control();
+        else if (StageNum == 2)
+            Stage2Control();
+        else if (StageNum == 3)
+            Stage3Control();
+    }
+
+    void Stage1Control()
+    {
+        rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), 0) * speed;
+        if(Input.GetButtonDown("SPACE"))
+            rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), jumpHeight) * speed;
+    }
+    void Stage2Control()
     {
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
@@ -30,4 +50,10 @@ public class PlayerMovement : MonoBehaviour
         tempVect = tempVect.normalized * speed * Time.deltaTime;
         rb.MovePosition(rb.position + tempVect * speed);
     }
+
+    void Stage3Control()
+    {
+        rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * speed;
+    }
+
 }
