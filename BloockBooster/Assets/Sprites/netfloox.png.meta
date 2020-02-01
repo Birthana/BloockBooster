@@ -1,0 +1,367 @@
+fileFormatVersion: 2
+guid: ec43d9b9c07ae9d4b904c31d22b4815b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 427643710110958805
+    second: netfloox_0
+  - first:
+      213: -7982424297297291635
+    second: netfloox_1
+  - first:
+      213: 884669459551786546
+    second: netfloox_2
+  - first:
+      213: 5320327627406199742
+    second: netfloox_3
+  - first:
+      213: 2532638640704553446
+    second: netfloox_4
+  - first:
+      213: -3441627615790420940
+    second: netfloox_5
+  - first:
+      213: 3491026002616737975
+    second: netfloox_6
+  - first:
+      213: -8248603167622102720
+    second: netfloox_7
+  - first:
+      213: -7384431060412509448
+    second: netfloox_8
+  - first:
+      213: 1709155402745670999
+    second: netfloox_9
+  - first:
+      213: -3968893753219060138
+    second: netfloox_10
+  - first:
+      213: -4779121825743053889
+    second: netfloox_11
+  - first:
+      213: -2393553017719023278
+    second: netfloox_12
+  - first:
+      213: 3033404855498883204
+    second: netfloox_13
+  - first:
+      213: 2074791485224820646
+    second: netfloox_14
+  - first:
+      213: -4199062401555226701
+    second: netfloox_15
+  - first:
+      213: -559458198951917402
+    second: netfloox_16
+  - first:
+      213: -1513805369138787325
+    second: netfloox_17
+  - first:
+      213: -3597323977114650486
+    second: netfloox_18
+  - first:
+      213: 1442781572961483830
+    second: netfloox_19
+  - first:
+      213: 8646370283974700438
+    second: netfloox_20
+  - first:
+      213: 4092355252675504945
+    second: netfloox_21
+  - first:
+      213: 340993621814258574
+    second: netfloox_22
+  - first:
+      213: 2487038959419421864
+    second: netfloox_23
+  - first:
+      213: -2904428742603689752
+    second: netfloox_24
+  - first:
+      213: -8389208328979157170
+    second: netfloox_25
+  - first:
+      213: -1671855863198721603
+    second: netfloox_26
+  - first:
+      213: 7344791106016736009
+    second: netfloox_27
+  - first:
+      213: 7699089069428822438
+    second: netfloox_28
+  - first:
+      213: -3330853761558966457
+    second: netfloox_29
+  - first:
+      213: -3578660122485646048
+    second: netfloox_30
+  - first:
+      213: -501150659529316654
+    second: netfloox_31
+  - first:
+      213: -5173390088626580021
+    second: netfloox_32
+  - first:
+      213: -342889939466848672
+    second: netfloox_33
+  - first:
+      213: 7140898322318107212
+    second: netfloox_34
+  - first:
+      213: 3614376175993478545
+    second: netfloox_35
+  - first:
+      213: 4886709742230484130
+    second: netfloox_36
+  - first:
+      213: 1325686960544988980
+    second: netfloox_37
+  - first:
+      213: -2719381907824025043
+    second: netfloox_38
+  - first:
+      213: 860110755556478796
+    second: netfloox_39
+  - first:
+      213: 8875828349094238628
+    second: netfloox_40
+  - first:
+      213: 4311960750096759932
+    second: netfloox_41
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 160
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: netfloox_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 400
+        height: 560
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d4089740bb4fe500800000000000000
+      internalID: 427643710110958805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: netfloox_1
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 400
+        height: 560
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d86d521f46bb83190800000000000000
+      internalID: -7982424297297291635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: netfloox_2
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 400
+        height: 560
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2369830bf2af64c00800000000000000
+      internalID: 884669459551786546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: netfloox_3
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 400
+        height: 560
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebb4e30f9c995d940800000000000000
+      internalID: 5320327627406199742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: netfloox_4
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 400
+        height: 560
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e18f9bdc6db52320800000000000000
+      internalID: 2532638640704553446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: netfloox_5
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 0
+        width: 400
+        height: 560
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43c23affae1ec30d0800000000000000
+      internalID: -3441627615790420940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
