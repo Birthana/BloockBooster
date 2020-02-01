@@ -11,6 +11,8 @@ public class Stage2GameManager : MonoBehaviour
     private float health;
     private float timer;
 
+    public static event Action<float, float> OnPlayerChange;
+
     private void Start()
     {
         health = playerHealth;
@@ -23,6 +25,10 @@ public class Stage2GameManager : MonoBehaviour
         if (timer <= 0)
         {
             Debug.Log("Timer End.");
+        }
+        else
+        {
+            OnPlayerChange?.Invoke(health, timer);
         }
     }
 

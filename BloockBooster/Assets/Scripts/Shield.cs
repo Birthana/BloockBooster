@@ -20,9 +20,16 @@ public class Shield : MonoBehaviour
         {
             position.RotateAround(player, zAxis, speed * Time.deltaTime);
         }
-        else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             position.RotateAround(player, zAxis, -speed * Time.deltaTime);
+        }
+
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) ||
+            Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+        {
+            position.RotateAround(player, zAxis, 180);
         }
     }
 
