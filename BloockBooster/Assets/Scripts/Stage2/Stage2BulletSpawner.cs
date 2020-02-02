@@ -8,6 +8,12 @@ public class Stage2BulletSpawner : MonoBehaviour
     public float cooldownTime;
     public bool isOnCooldown;
 
+    private void Start()
+    {
+        UIManager.instance.SetTimer(60.0f, 0);
+        UIManager.instance.SetMaxHealth(5);
+    }
+
     // Update is called once per frame
     void Update()
     {

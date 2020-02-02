@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class UIManager : MonoBehaviour
@@ -17,7 +18,7 @@ public class UIManager : MonoBehaviour
     public float maxTimer;
     private float currentTimer;
     private bool isTimerOn;
-
+    private int nextScene;
 
     public void Awake()
     {
@@ -48,7 +49,8 @@ public class UIManager : MonoBehaviour
             {
                 isTimerOn = false;
                 timer.SetActive(false);
-                Debug.Log("Timer at Zero.");
+                //Debug.Log("Timer at Zero.");
+                SceneManager.LoadScene(nextScene);
             }
         }
     }
@@ -60,10 +62,11 @@ public class UIManager : MonoBehaviour
         ShowHealth();
     }
 
-    public void SetTimer(float timer)
+    public void SetTimer(float timer, int scene)
     {
         maxTimer = timer;
         currentTimer = maxTimer;
+        nextScene = scene;
         StartTimer();
     }
 
