@@ -12,6 +12,7 @@ public class BarrelSpawner : MonoBehaviour
 
     private void Start()
     {
+        SoundManager.instance.PlayBackground(1);
         animator = this.GetComponent<Animator>();
     }
 
