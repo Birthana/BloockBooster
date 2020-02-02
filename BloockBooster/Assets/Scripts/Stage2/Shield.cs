@@ -8,14 +8,43 @@ public class Shield : MonoBehaviour
     public float speed;
     [SerializeField] private Vector3 player;
 
+    private GameObject currentPlayer;
+    private float maxDistance;
+
+    Rigidbody2D rb;
+
     private void Start()
     {
         position = this.transform;
+        currentPlayer = GameObject.FindGameObjectWithTag("Player");
+        player = currentPlayer.transform.position;
+        maxDistance = Vector3.Distance(position.position, player);
+
+        rb = GetComponent<Rigidbody2D>();
     }
     // Update is called once per frame
     void Update()
     {
-        Vector3 zAxis = new Vector3(0, 0, 1);
+        player = currentPlayer.transform.position;
+        position = this.transform;
+        Vector3 zAxis = new Vector3(0, 0, 1); 
+        player = currentPlayer.transform.position;
+        if (Vector3.Distance(position.position, player) > maxDistance+0.1f)
+        {
+            this.transform.position = Vector3.MoveTowards(position.position, player, 5* Time.deltaTime);
+            Vector3 dir = (position.position - player).normalized;
+            this.transform.rotation = Quaternion.Euler(0, 0, Mathf.Rad2Deg * Mathf.Atan2(dir.y, dir.x));
+        }else if (Vector3.Distance(position.position, player) < maxDistance-0.1f)
+        {
+            Vector3 dir = (position.position - player).normalized;
+            this.transform.position = Vector3.MoveTowards(position.position, player, -5* Time.deltaTime);
+            this.transform.rotation = Quaternion.Euler(0, 0, Mathf.Rad2Deg * Mathf.Atan2(dir.y, dir.x));
+        }
+        else
+        {
+            Vector3 dir = (position.position - player).normalized;
+            this.transform.rotation = Quaternion.Euler(0, 0, Mathf.Rad2Deg * Mathf.Atan2(dir.y, dir.x));
+        }
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             position.RotateAround(player, zAxis, speed * Time.deltaTime);
