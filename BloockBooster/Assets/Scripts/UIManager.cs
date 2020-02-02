@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     public static UIManager instance = null;
     public GameObject healthHearts;
     public GameObject timer;
+    public GameObject bossHealthText;
     public GameObject heartPrefab;
     public Sprite heartLossSprite;
 
@@ -19,6 +20,9 @@ public class UIManager : MonoBehaviour
     private float currentTimer;
     private bool isTimerOn;
     private int nextScene;
+    public int bossHealth;
+    private int currentBossHealth;
+    private bool isBossHealthOn;
 
     public void Awake()
     {
@@ -29,6 +33,8 @@ public class UIManager : MonoBehaviour
             currentTimer = maxTimer;
             //ShowHealth();
             timer.SetActive(false);
+            bossHealth = currentBossHealth;
+            bossHealthText.SetActive(false);
             //StartTimer();
             //SetMaxHealth(5);
         }
@@ -53,6 +59,17 @@ public class UIManager : MonoBehaviour
                 SceneManager.LoadScene(nextScene);
             }
         }
+        if (isBossHealthOn)
+        {
+            GameObject boss = GameObject.FindGameObjectWithTag("Boss");
+            bossHealthText.transform.position = Camera.main.WorldToScreenPoint(boss.transform.position);
+        }
+    }
+
+    public void BossTakeDamage()
+    {
+        currentBossHealth--;
+        bossHealthText.GetComponent<TextMeshProUGUI>().text = "" + currentBossHealth;
     }
 
     public void SetMaxHealth(int health)
@@ -72,6 +89,20 @@ public class UIManager : MonoBehaviour
         currentTimer = maxTimer;
         nextScene = scene;
         StartTimer();
+    }
+
+    public void SetBossHealth(int health)
+    {
+        bossHealth = health;
+        currentBossHealth = bossHealth;
+        ShowBossHealthBar();
+    }
+
+    public void ShowBossHealthBar()
+    {
+        isBossHealthOn = true;
+        bossHealthText.SetActive(true);
+        bossHealthText.GetComponent<TextMeshProUGUI>().text = "" + currentBossHealth;
     }
 
     public void ShowHealth()
