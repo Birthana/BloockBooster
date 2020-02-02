@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stage4.unity
     guid: 484a6b1d07860494b84bea18649b1d4b
+  - enabled: 1
+    path: Assets/Scenes/GameWin.unity
+    guid: e314a58949736c94d8f99e31e634a96c
   m_configObjects: {}
