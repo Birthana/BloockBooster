@@ -24,21 +24,20 @@ public class BulletMovement : MonoBehaviour
             mPos = Input.mousePosition;
     }
 
-    public void Fire(Vector3 pos)
+    public void MouseFire(Vector3 pos)
     {
-        Debug.Log(rb.velocity);
-        mPos = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Screen.height - Input.mousePosition.y));
-        pos = new Vector2(transform.position.x, transform.position.y + 1);
-        
-        Vector3 dir = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
+        Vector3 dir = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - pos).normalized;
         float angle = Mathf.Atan2(dir.y, dir.x);
-        
         transform.localPosition = Vector3.Normalize(new Vector3(Mathf.Cos(angle), Mathf.Sin(angle)));
-
-        var rotation1 = Quaternion.Euler(dir.x, dir.y, dir.z);
         rb.velocity = transform.localPosition * speed;
-        Debug.Log(transform.localPosition);
-        this.transform.parent = null;
+    }
+    
+    public void BossFire(Vector3 pos)
+    {
+        Vector3 dir = (pos - transform.position).normalized;
+        float angle = Mathf.Atan2(dir.y, dir.x);
+        transform.localPosition = Vector3.Normalize(new Vector3(Mathf.Cos(angle), Mathf.Sin(angle)));
+        rb.velocity = transform.localPosition * speed;
     }
 
     private void OnTriggerEnter2D(Collider2D other)

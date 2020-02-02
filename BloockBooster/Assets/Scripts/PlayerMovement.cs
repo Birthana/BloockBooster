@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
 
     private bool isJumping;
-    private int StageNum = 1;
+    [SerializeField] int StageNum = 1;
     private float fallMultiplier = 2.5f;
     private float lowJumpMultiplier = 2f;
 

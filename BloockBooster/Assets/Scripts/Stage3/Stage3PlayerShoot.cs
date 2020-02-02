@@ -40,7 +40,7 @@ public class Stage3PlayerShoot : MonoBehaviour
             b.SetActive(true);
             b.transform.localPosition = p.gameObject.transform.localPosition + (p.gameObject.transform.up * 0.01f);
             
-            b.GetComponent<BulletMovement>().Fire(p.transform.localPosition);
+            b.GetComponent<BulletMovement>().MouseFire(p.transform.localPosition);
         }
         yield return new WaitForSeconds(0.05f);
         isShooting = false;
