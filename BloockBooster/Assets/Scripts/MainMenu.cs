@@ -8,6 +8,8 @@ public class MainMenu : MonoBehaviour
     public GameObject playButton;
     public GameObject creditsButton;
     public GameObject creditPoster;
+    public GameObject invisiblePlayButton;
+    public GameObject invisibleCreditsButton;
     private bool isRunning;
     private bool isShowingPoster;
 
@@ -45,7 +47,12 @@ public class MainMenu : MonoBehaviour
     IEnumerator ShowPoster()
     {
         isShowingPoster = true;
+        invisiblePlayButton.SetActive(false);
+        invisibleCreditsButton.SetActive(false);
         creditPoster.GetComponent<Animator>().SetBool("IsOpen", true);
+        yield return new WaitForSeconds(1.0f);
+        DialogueManager.instance.SetDialogue("The people who made it.");
+        yield return new WaitForSeconds(4.0f);
         bool still_looking = true;
         while (still_looking)
         {
@@ -56,6 +63,8 @@ public class MainMenu : MonoBehaviour
             }
             yield return null;
         }
+        invisiblePlayButton.SetActive(true);
+        invisibleCreditsButton.SetActive(true);
         isShowingPoster = false;
     }
 }
