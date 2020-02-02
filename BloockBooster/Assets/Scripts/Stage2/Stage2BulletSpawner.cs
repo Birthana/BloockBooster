@@ -10,8 +10,9 @@ public class Stage2BulletSpawner : MonoBehaviour
 
     private void Start()
     {
-        UIManager.instance.SetTimer(60.0f, 0);
-        UIManager.instance.SetMaxHealth(5);
+        SoundManager.instance.PlayBackground(2);
+        UIManager.instance.SetTimer(75.0f, 0);
+        UIManager.instance.SetMaxHealth(7);
     }
 
     // Update is called once per frame

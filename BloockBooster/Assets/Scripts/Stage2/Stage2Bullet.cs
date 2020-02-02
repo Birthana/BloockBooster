@@ -19,4 +19,17 @@ public class Stage2Bullet : MonoBehaviour
             this.transform.position = Vector2.MoveTowards(this.transform.position, playerPosition, speed * Random.Range(0.5f, 2.0f) * Time.deltaTime);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.GetComponent<Shield>())
+        {
+            Destroy(gameObject);
+        }
+        if (collision.GetComponent<PlayerMovement>())
+        {
+            UIManager.instance.TakeDamage();
+            Destroy(gameObject);
+        }
+    }
 }

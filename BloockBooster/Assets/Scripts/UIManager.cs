@@ -57,6 +57,10 @@ public class UIManager : MonoBehaviour
 
     public void SetMaxHealth(int health)
     {
+        foreach (Transform child in healthHearts.transform)
+        {
+            Destroy(child.gameObject);
+        }
         maxHealth = health;
         currentHealth = maxHealth;
         ShowHealth();
