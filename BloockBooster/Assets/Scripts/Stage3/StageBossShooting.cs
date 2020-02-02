@@ -13,6 +13,7 @@ public class StageBossShooting : MonoBehaviour
 
     List<float> timers;
 
+    [SerializeField] List<int> AttackList;
     List<Attack> listOfAttacks;
     // Start is called before the first frame update
     void Start()
@@ -39,7 +40,7 @@ public class StageBossShooting : MonoBehaviour
     void Shoot()
     {
         float time = Time.deltaTime;
-        for(int i = 0; i < listOfAttacks.Count; i++)
+        for(int i = 0; i < AttackList.Count; i++)
         {
             
             if (timers[i] <= 0)

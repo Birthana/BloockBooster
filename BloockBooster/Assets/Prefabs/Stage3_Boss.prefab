@@ -162,6 +162,7 @@ MonoBehaviour:
   pool:
   - {fileID: 1650948334403621635}
   player: {fileID: 0}
+  AttackList: 000000000000000000000000
 --- !u!1 &1650948334403621633
 GameObject:
   m_ObjectHideFlags: 0
