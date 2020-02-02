@@ -71,6 +71,7 @@ public class StageBossShooting : MonoBehaviour
         StartCoroutine(Spread());
         return 5f;
     }
+
     /*
     float CircleAttack()
     {
@@ -105,7 +106,7 @@ public class StageBossShooting : MonoBehaviour
         }
         foreach (GameObject b in movement)
         {
-            Vector3 randomArea = new Vector3(Random.Range(-50.0f, 50.0f), Random.Range(-50.0f, 50.0f), 0);
+            Vector3 randomArea = new Vector3(Random.Range(-100.0f, 100.0f), Random.Range(-100.0f, 100.0f), 0);
             b.transform.localPosition = Vector3.Normalize(((player.transform.position + randomArea) - (pool[0].transform.position)));
             b.GetComponent<BulletMovement>().BossFire(player.transform.position);
         }
