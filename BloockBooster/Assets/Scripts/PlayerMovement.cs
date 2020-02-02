@@ -30,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
             Stage2Control();
         else if (StageNum == 3)
             Stage3Control();
+        else if (StageNum == 4)
+            Stage4Control();
     }
 
     void Stage1Control()
@@ -72,6 +74,26 @@ public class PlayerMovement : MonoBehaviour
     void Stage3Control()
     {
         rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * speed;
+    }
+
+    void Stage4Control()
+    {
+        animator.SetFloat("horizontal", 1);
+        animator.SetFloat("speed", 1);
+        if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
+        {
+            isJumping = true;
+            animator.SetBool("isJumping", true);
+            rb.velocity = Vector2.up * jumpForce;
+        }
+        if (rb.velocity.y < 0)
+        {
+            rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+        }
+        else
+        {
+            rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
