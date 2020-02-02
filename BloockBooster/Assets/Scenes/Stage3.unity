@@ -1093,7 +1093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 057fd109513015a48af983404e7d20fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 10
 --- !u!50 &1624856118
 Rigidbody2D:
   serializedVersion: 4
@@ -1122,6 +1122,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 155171319, guid: aac321f373d0f7e4689bfe3648387860, type: 3}
+      propertyPath: StageNum
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2013010734368716946, guid: aac321f373d0f7e4689bfe3648387860,
         type: 3}
       propertyPath: m_LocalPosition.x

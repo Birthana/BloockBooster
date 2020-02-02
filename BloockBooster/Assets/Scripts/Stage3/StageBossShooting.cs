@@ -22,7 +22,7 @@ public class StageBossShooting : MonoBehaviour
         listOfAttacks = new List<Attack>();
         listOfAttacks.Add(SingleAttack);
         listOfAttacks.Add(StreamAttack);
-        //listOfAttacks.Add(SpreadAttack);
+        listOfAttacks.Add(SpreadAttack);
         //listOfAttacks.Add(CircleAttack);
         foreach(Attack a in listOfAttacks )
         {
@@ -31,7 +31,7 @@ public class StageBossShooting : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         Shoot();
     }
@@ -41,7 +41,7 @@ public class StageBossShooting : MonoBehaviour
         float time = Time.deltaTime;
         for(int i = 0; i < listOfAttacks.Count; i++)
         {
-            Debug.Log(timers[i]);
+            
             if (timers[i] <= 0)
             {
                 timers[i] = listOfAttacks[i]();
@@ -56,29 +56,59 @@ public class StageBossShooting : MonoBehaviour
         b.SetActive(true);
         b.transform.localPosition = Vector3.Normalize((player.transform.position - pool[0].transform.position));
         b.GetComponent<BulletMovement>().BossFire(player.transform.position);
-        return 5.0f;
+        return 1f;
     }
 
     float StreamAttack()
     {
-        for (int i = 0; i < 5; i++)
-        {
-            GameObject b = pool[0].FindUnusedObject();
-            b.SetActive(true);
-            b.transform.localPosition = Vector3.Normalize((player.transform.position - pool[0].transform.position));
-            b.GetComponent<BulletMovement>().BossFire(player.transform.position);
-        }
-        return 10.0f;
+        StartCoroutine(Stream());
+        return 7f;
     }
 
-    /*
+    
     float SpreadAttack()
     {
-
+        StartCoroutine(Spread());
+        return 5f;
     }
-
+    /*
     float CircleAttack()
     {
 
     }*/
+
+    IEnumerator Stream()
+    {
+        List<BulletMovement> movement = new List<BulletMovement>();
+        for (int i = 0; i < 5; i++)
+        {
+            GameObject b = pool[0].FindUnusedObject();
+            b.SetActive(true);
+            Vector3 randomArea = new Vector3(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f), 0);
+            b.transform.localPosition = Vector3.Normalize( ( (player.transform.position + randomArea) - (pool[0].transform.position) ) );
+            b.GetComponent<BulletMovement>().BossFire(player.transform.position);
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+
+    IEnumerator Spread()
+    {
+        List<GameObject> movement = new List<GameObject>();
+        for (int i = 0; i < 5; i++)
+        {
+            GameObject b = pool[0].FindUnusedObject();
+            b.SetActive(true);
+            b.transform.localPosition = new Vector3(0, 0, 0);
+            movement.Add(b);
+            yield return new WaitForSeconds(0.1f);
+            
+        }
+        foreach (GameObject b in movement)
+        {
+            Vector3 randomArea = new Vector3(Random.Range(-50.0f, 50.0f), Random.Range(-50.0f, 50.0f), 0);
+            b.transform.localPosition = Vector3.Normalize(((player.transform.position + randomArea) - (pool[0].transform.position)));
+            b.GetComponent<BulletMovement>().BossFire(player.transform.position);
+        }
+    }
+
 }
