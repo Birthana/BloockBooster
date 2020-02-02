@@ -33,8 +33,9 @@ public class FallingTape : MonoBehaviour
         }
         if (collision.gameObject.GetComponent<PlayerMovement>())
         {
+            UIManager.instance.TakeDamage();
             Destroy(this.gameObject);
-            Debug.Log("Player Hit.");
+            //Debug.Log("Player Hit.");
         }
     }
 

@@ -8,7 +8,8 @@ public class Barrel : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<PlayerMovement>())
         {
-            Debug.Log("Hit Player.");
+            UIManager.instance.TakeDamage();
+            //Debug.Log("Hit Player.");
             Destroy(this.gameObject);
         }
     }
