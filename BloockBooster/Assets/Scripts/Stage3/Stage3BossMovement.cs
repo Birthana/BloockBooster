@@ -26,7 +26,7 @@ public class Stage3BossMovement : MonoBehaviour
         if( time <= 0 )
         {
             RandomMove(new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), 0));
-            time = 10f;
+            time = Random.Range(0f, 7.0f);
         }
     }
 
@@ -42,26 +42,26 @@ public class Stage3BossMovement : MonoBehaviour
         if (other.CompareTag("Border") && other.name == "Right")
         {
             RandomMove(new Vector3(Random.Range(-0.9f, -0.1f), Random.Range(-0.9f, 0.9f)));
-            time = 31f;
+            time = Random.Range(0f, 4.0f);
             if (rb.velocity.x >= 0) ;
         }
 
         if (other.CompareTag("Border") && other.name == "Left")
         {
             RandomMove(new Vector3(Random.Range(0.1f, 0.9f), Random.Range(-0.9f, 0.9f)));
-            time = 31f;
+            time = Random.Range(0f, 4.0f);
         }
 
         if (other.CompareTag("Border") && other.name == "Top")
         {
             RandomMove(new Vector3(Random.Range(-0.9f, 0.9f), Random.Range(-0.9f, -0.1f)));
-            time = 31f;
+            time = Random.Range(0f, 4.0f);
         }
 
         if (other.CompareTag("Border") && other.name == "Bottom")
         {
             RandomMove(new Vector3(Random.Range(-0.9f, 0.9f), Random.Range(0.1f, 0.9f)));
-            time = 31f;
+            time = Random.Range(0f, 4.0f);
         }
     }
 }

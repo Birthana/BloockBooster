@@ -56,7 +56,7 @@ public class StageBossShooting : MonoBehaviour
         b.SetActive(true);
         b.transform.localPosition = Vector3.Normalize((player.transform.position - pool[0].transform.position));
         b.GetComponent<BulletMovement>().BossFire(player.transform.position);
-        return 1f;
+        return 0.5f;
     }
 
     float StreamAttack()
@@ -87,7 +87,8 @@ public class StageBossShooting : MonoBehaviour
             b.SetActive(true);
             Vector3 randomArea = new Vector3(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f), 0);
             b.transform.localPosition = Vector3.Normalize( ( (player.transform.position + randomArea) - (pool[0].transform.position) ) );
-            b.GetComponent<BulletMovement>().BossFire(player.transform.position);
+            Vector3 angle = new Vector3(Random.Range(-2.0f, 2.0f), Random.Range(-2.0f, 2.0f), 0);
+            b.GetComponent<BulletMovement>().BossFire(player.transform.position + angle);
             yield return new WaitForSeconds(0.1f);
         }
     }
@@ -106,9 +107,10 @@ public class StageBossShooting : MonoBehaviour
         }
         foreach (GameObject b in movement)
         {
-            Vector3 randomArea = new Vector3(Random.Range(-100.0f, 100.0f), Random.Range(-100.0f, 100.0f), 0);
+            Vector3 randomArea = new Vector3(Random.Range(-500.0f, 500.0f), Random.Range(-500.0f, 500.0f), 0);
             b.transform.localPosition = Vector3.Normalize(((player.transform.position + randomArea) - (pool[0].transform.position)));
-            b.GetComponent<BulletMovement>().BossFire(player.transform.position);
+            Vector3 angle = new Vector3(Random.Range(-4.0f, 4.0f), Random.Range(-4.0f, 4.0f), 0);
+            b.GetComponent<BulletMovement>().BossFire(player.transform.position+ angle);
         }
     }
 
