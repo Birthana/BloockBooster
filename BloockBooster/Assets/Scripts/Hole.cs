@@ -6,7 +6,7 @@ public class Hole : MonoBehaviour
 {
     private void Start()
     {
-        SoundManager.instance.PlayBackground(4);
+        //SoundManager.instance.PlayBackground(4);
         UIManager.instance.SetMaxHealth(7);
         UIManager.instance.SetTimer(60,5);
     }

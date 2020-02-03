@@ -11,7 +11,7 @@ public class Stage2BulletSpawner : MonoBehaviour
     private void Start()
     {
         SoundManager.instance.PlayBackground(2);
-        UIManager.instance.SetTimer(60.0f, 0);
+        UIManager.instance.SetTimer(60.0f, 1);
         UIManager.instance.SetMaxHealth(7);
     }
 

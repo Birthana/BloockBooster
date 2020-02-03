@@ -25,23 +25,19 @@ public class ObjectPool : MonoBehaviour
     //FInd inactive bullets
     public GameObject FindUnusedObject()
     {
-        try
+        
+        foreach (GameObject g in objects)
         {
-            foreach (GameObject g in objects)
+            if (!g.activeInHierarchy)
             {
-                if (!g.activeInHierarchy)
-                {
-                    g.transform.SetParent(this.transform);
-                    return g;
-                }
+                g.transform.SetParent(this.transform);
+                return g;
             }
-            GameObject obj = Instantiate(objectToPool, this.transform);
-            return obj;
+            
+            
         }
-        catch(MissingReferenceException e)
-        {
-            GameObject obj = Instantiate(objectToPool, this.transform);
-            return obj;
-        }
+        GameObject obj = Instantiate(objectToPool, this.transform);
+        return obj;
+
     }
 }
