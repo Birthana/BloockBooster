@@ -71,6 +71,10 @@ public class UIManager : MonoBehaviour
     {
         currentBossHealth--;
         bossHealthText.GetComponent<TextMeshProUGUI>().text = "" + currentBossHealth;
+        if (currentBossHealth <= 0)
+        {
+            SceneManager.LoadScene(4);
+        }
     }
 
     public void SetMaxHealth(int health)
@@ -137,7 +141,8 @@ public class UIManager : MonoBehaviour
         LoseHealth();
         if (currentHealth <= 0)
         {
-            Debug.Log("Game Over.");
+            //Debug.Log("Game Over.");
+            SceneManager.LoadScene(6);
         }
     }
 

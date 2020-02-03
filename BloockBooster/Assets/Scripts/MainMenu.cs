@@ -33,6 +33,23 @@ public class MainMenu : MonoBehaviour
 
     public void Play()
     {
+        StartCoroutine(Cutscene());
+    }
+
+    IEnumerator Cutscene()
+    {
+        DialogueManager.instance.SetDialogue("What is this? A VHS.");
+        yield return new WaitForSeconds(1.0f);
+        bool still_looking = true;
+        while (still_looking)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                still_looking = false;
+            }
+            yield return null;
+        }
+        yield return new WaitForSeconds(1.0f);
         SceneManager.LoadScene(2);
     }
 
