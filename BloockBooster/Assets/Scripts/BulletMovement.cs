@@ -49,12 +49,19 @@ public class BulletMovement : MonoBehaviour
 
         if (!(this.transform.parent.parent.gameObject.CompareTag("Player")) && other.CompareTag("Player"))
         {
+            UIManager.instance.TakeDamage();
             this.gameObject.SetActive(false);
         }
 
         if (!(this.transform.parent.parent.gameObject.CompareTag("Boss")) && other.CompareTag("Boss"))
         {
+            UIManager.instance.BossTakeDamage();
             this.gameObject.SetActive(false);
+        }
+        if (!(this.transform.parent.parent.gameObject.CompareTag("Enemy")) && other.CompareTag("Enemy"))
+        {
+            this.gameObject.SetActive(false);
+            other.gameObject.SetActive(false);
         }
     }
 }
