@@ -39,7 +39,6 @@ public class Stage3PlayerShoot : MonoBehaviour
             GameObject b = p.FindUnusedObject();
             b.SetActive(true);
             b.transform.localPosition = p.gameObject.transform.localPosition + (p.gameObject.transform.up * 0.01f);
-            
             b.GetComponent<BulletMovement>().MouseFire(p.transform.localPosition);
         }
         yield return new WaitForSeconds(0.05f);

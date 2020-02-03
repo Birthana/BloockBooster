@@ -16,6 +16,7 @@ public class Stage3BossMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         cam = Camera.main;
+        RandomMove(new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), 0));
     }
 
     // Update is called once per frame

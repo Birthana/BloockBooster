@@ -40,7 +40,8 @@ public class UIManager : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            ;
         }
         DontDestroyOnLoad(gameObject);
     }

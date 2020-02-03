@@ -33,17 +33,17 @@ public class Shield : MonoBehaviour
         {
             this.transform.position = Vector3.MoveTowards(position.position, player, 5* Time.deltaTime);
             Vector3 dir = (position.position - player).normalized;
-            this.transform.rotation = Quaternion.Euler(0, 0, Mathf.Rad2Deg * Mathf.Atan2(dir.y, dir.x));
+            this.transform.rotation = Quaternion.Euler(0, 0, (Mathf.Rad2Deg * Mathf.Atan2(dir.y, dir.x)) + 90f);
         }else if (Vector3.Distance(position.position, player) < maxDistance-0.1f)
         {
             Vector3 dir = (position.position - player).normalized;
             this.transform.position = Vector3.MoveTowards(position.position, player, -5* Time.deltaTime);
-            this.transform.rotation = Quaternion.Euler(0, 0, Mathf.Rad2Deg * Mathf.Atan2(dir.y, dir.x));
+            this.transform.rotation = Quaternion.Euler(0, 0, (Mathf.Rad2Deg * Mathf.Atan2(dir.y, dir.x))+90f);
         }
         else
         {
             Vector3 dir = (position.position - player).normalized;
-            this.transform.rotation = Quaternion.Euler(0, 0, Mathf.Rad2Deg * Mathf.Atan2(dir.y, dir.x));
+            this.transform.rotation = Quaternion.Euler(0, 0, (Mathf.Rad2Deg * Mathf.Atan2(dir.y, dir.x)) + 90f);
         }
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
@@ -62,11 +62,22 @@ public class Shield : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+        
         if (collision.gameObject.GetComponent<Stage2Bullet>())
         {
-            Destroy(collision.gameObject);
+            Debug.Log(collision.gameObject);
+            if ((this.GetComponentInParent<PlayerMovement>().StageNum == 2))
+            {
+                Debug.Log(collision.gameObject);
+
+            }
+            else
+            {
+                collision.gameObject.SetActive(false);
+            }
+            
         }
     }
 }
