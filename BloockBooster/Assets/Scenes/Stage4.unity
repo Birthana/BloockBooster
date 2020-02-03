@@ -1155,6 +1155,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3486857714903390007, guid: 1ece1899cce51884287734380ba9999d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 3661897543578511644, guid: 1ece1899cce51884287734380ba9999d,
         type: 3}
       propertyPath: speed
@@ -1170,7 +1175,8 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8032183122159051191, guid: 1ece1899cce51884287734380ba9999d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1ece1899cce51884287734380ba9999d, type: 3}
 --- !u!1 &1754712226
 GameObject:
