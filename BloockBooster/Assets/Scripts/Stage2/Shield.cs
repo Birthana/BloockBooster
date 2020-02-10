@@ -65,16 +65,17 @@ public class Shield : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
-        if (collision.gameObject.GetComponent<Stage2Bullet>())
+        if (collision.gameObject.GetComponent<BulletMovement>())
         {
             Debug.Log(collision.gameObject);
             if ((this.GetComponentInParent<PlayerMovement>().StageNum == 2))
             {
                 Debug.Log(collision.gameObject);
-
+                Destroy(collision.gameObject);
             }
             else
             {
+                Debug.Log(collision.gameObject);
                 collision.gameObject.SetActive(false);
             }
             
