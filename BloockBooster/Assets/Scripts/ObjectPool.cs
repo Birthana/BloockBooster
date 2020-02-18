@@ -28,7 +28,7 @@ public class ObjectPool : MonoBehaviour
         
         foreach (GameObject g in objects)
         {
-            if (!g.activeInHierarchy)
+            if (g != null&&!g.activeInHierarchy)
             {
                 g.transform.SetParent(this.transform);
                 return g;
